@@ -24,6 +24,15 @@ function getNumberOfWeeks(month, weekStart) {
 
 export default class Calendar extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentMonthMoment: moment(props.currentMonth),
+      selectedMoment: moment(props.selectedDate),
+      rowHeight: null,
+    }
+  }
+
   state = {
     currentMoment: moment(this.props.startDate),
     selectedMoment: this.props.selectedDate && moment(this.props.selectedDate),
